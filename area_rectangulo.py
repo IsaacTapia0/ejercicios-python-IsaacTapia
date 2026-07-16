@@ -1,8 +1,25 @@
 # Programa para calcular el área de un rectángulo
 
-base = float(input("Ingresa la base del rectángulo: "))
-altura = float(input("Ingresa la altura del rectángulo: "))
+def main():
+    print("=== Calculadora de Área de Rectángulo ===\n")
 
-area = base * altura
+    try:
+        base = float(input("Ingresa la base del rectángulo: "))
+        altura = float(input("Ingresa la altura del rectángulo: "))
 
-print(f"El área del rectángulo es: {area}")
+        if base <= 0 or altura <= 0:
+            print("Error: La base y la altura deben ser valores positivos.")
+            return
+
+        area = base * altura
+
+        print(f"\nResultados:")
+        print(f"  Base: {base}")
+        print(f"  Altura: {altura}")
+        print(f"  Área: {area:.2f}")
+
+    except ValueError:
+        print("Error: Por favor ingresa valores numéricos válidos.")
+
+if __name__ == "__main__":
+    main()
